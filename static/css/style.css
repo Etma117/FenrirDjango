@@ -381,7 +381,7 @@ ul.btn li:last-child {
 /** banner section **/
 
 .banner_main {
-     background: url(../images/banner.jpg);
+     background: url("{% static 'img/banner.jpg'%}");
      background-repeat: no-repeat;
      min-height: 900px;
      background-size: 100% 100%;
@@ -396,7 +396,7 @@ ul.btn li:last-child {
      content: "";
      width:50px; 
      height:40px;
-     background: url(../images/cross.png);
+     background: url("{% static 'img/cross.jpg'%}");
      background-repeat: no-repeat;
      bottom: -38px;
      right: 38px;
@@ -406,7 +406,7 @@ ul.btn li:last-child {
      content: "";
      width:50px; 
      height:40px;
-     background: url(../images/cross.png);
+     background: url(../img/cross.png);
      background-repeat: no-repeat;
      bottom: -38px;
      left: 38px;
@@ -783,7 +783,7 @@ ul.btn li:last-child {
 /** contact section **/
 
 .contact {
-     background: url(../images/contact_g.jpg);
+     background: url("{% static 'img/contact_g.jpg'%}");
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding: 90px 0;
