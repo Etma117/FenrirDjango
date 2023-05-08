@@ -35,7 +35,7 @@
    <body class="main-layout inner_posituong">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+         <div class="loader"><img src= "{% static 'images/loading.gif' %}" alt="#" /></div>
       </div>
       <!-- end loader -->
       <!-- header -->
@@ -48,7 +48,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="index.html"><img src="images/LogoAzul.png" alt="#" width="150px" height="200px" /></a>
+                              <a href="index.html"><img src=" {% static 'images/LogoAzul.png' %}" alt="#" width="100px" height="100px" /></a>
                            </div>
                         </div>
                      </div>
@@ -95,11 +95,19 @@
       <!-- end header inner -->
       <!-- end header -->
       <!-- products -->
-      {% block contenido %}
-      <h1>Plantilla Base Sitio FenrirShop</h1>
-      {% endblock %}
+
+      
+      <div  class="products">
+         <div class="container">
+            {% block contenido %}
+            <h1> Plantilla inicial </h1>
+            {% endblock %}
+         </div>
+      </div>
+     
       <!-- end products -->
       <!--  footer -->
+      {% block footer%}
       <footer>
          <div class="footer">
             <div class="container">
@@ -115,6 +123,7 @@
                   
          </div>
       </footer>
+      {%endblock%}
       <!-- end footer -->
       <!-- Javascript files-->
       <script src=" {% static 'js/jquery.min.js'%}"></script>
