@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Productos{% endblock %}
+
+{% block contenido %} 
+    <h1>Todos los Productos</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <td style = "text-align: center;">Marca</td>
+          <td style = "text-align: center;">Nombre</td>
+          <td style = "text-align: center;">Categoria</td>
+          <td style = "text-align: center;">Modelo</td>
+          <td style = "text-align: center;">Descripcion</td>
+          <td style = "text-align: center;">Numero de serie</td>
+          <td style = "text-align: center;">Exitencias</td>
+          <td style = "text-align: center;">Precio en MXN</td>
+          <td style = "text-align: center;">Acciones</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in productos %}
+        <tr>
+          <td style = "text-align: center;">{{item.marca}}</td>
+          <td style = "text-align: center;">{{item.nombre}}</td>
+          <td style = "text-align: center;">{{item.categoria}}</td>
+          <td style = "text-align: center;">{{item.modelo}}</td>
+          <td style = "text-align: center;">{{item.descripcion}}</td>
+          <td style = "text-align: center;">{{item.NS}}</td>
+          <td style = "text-align: center;">{{item.existencias}}</td>
+          <td style = "text-align: center;">{{item.precio}}</td>
+          <td> 
+            <a href= "{% url 'productosEditar' id=item.id %}" class= "btn btn-success" type="button">Editar</a>
+
+            <a href = "{% url 'productosEliminar' pk=item.id %}"class="btn btn-danger" type="submit">Eliminar</button> 
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>   
+
+    <a href="{% url 'productosCrear' %}" class="btn btn-success" role="button"> Crear Nuevo </a>
+
+{% endblock %}
