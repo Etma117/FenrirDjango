@@ -4,7 +4,7 @@ from .forms import ProductoForm
 
 # Create your views here.
 def home(request):
-    return HttpResponse('hola')
+    return render(request,'catalogos.html')
 
 def productosListar(request):
     productos = (Productos.objects.all())
